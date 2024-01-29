@@ -1,12 +1,15 @@
 import * as React from "react"
+import styled from "styled-components"
+
+const Wrapper = styled.div`
+  padding-bottom: 100px;
+`
 
 const Layout = ({ children }) => {
   return (
-    <>
-      <div>
-        <main>{children}</main>
-      </div>
-    </>
+    <Wrapper>
+      <main>{children}</main>
+    </Wrapper>
   )
 }
 

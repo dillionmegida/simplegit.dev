@@ -1,42 +1,7 @@
 export const LINKS = {
-    playlist: "https://www.youtube.com/playlist?list=PLLdz3KlabJv3U7Hdibr4S8VgM0-NQm-h2"
+    playlist: "https://www.youtube.com/playlist?list=PLLdz3KlabJv1uH5tko-FhXjNaykBxJXSJ"
 }
 
-export const REACT_CONCEPTS= [
-    "props",
-  "hooks",
-  "useState",
-  "components",
-  "lifecycle",
-  "side effects",
-  "useEffect",
-  "jsx",
-  "state",
-  "event handling",
-  "conditional rendering",
-  "refs",
-  "context api",
-  "custom hooks",
-  "higher order components",
-  "render props",
-  "fragment",
-  "portals",
-  "react router",
-  "pure components",
-  "redux",
-  "memoization",
-  "react.lazy",
-  "react suspense",
-  "css-in-js",
-  "styled components",
-  "css modules",
-  "propTypes",
-  "typescript",
-  "enzyme",
-  "virtual dom",
-  "children",
-  "ssr",
-  "spa",
-  "csr",
-  "code splitting",
+export const GIT_CONCEPTS= [
+    
 ]

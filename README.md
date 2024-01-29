@@ -1,3 +1,3 @@
-# simplereactjs
+# gitsimplified.com
 
-More info...
+[More info](https://gitsimplified.com)

@@ -1,48 +1,43 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap");
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-  --git: #f14e32;
+  --color-git: #f14e32;
+  --color-git-dark: color-mix(in srgb, #f14e32, #333 20%);
+  --color-git-dark-2: color-mix(in srgb, #f14e32, #333 40%);
+  --color-git-dark-3: color-mix(in srgb, #f14e32, #333 60%);
+  --color-git-dark-4: color-mix(in srgb, #f14e32, #333 80%);
+  --color-git-light: color-mix(in srgb, #f14e32, #eee 20%);
 }
 
 body {
   margin: 0;
-  background-color: color-mix(in srgb, var(--git), #333 90%);
+  background-color: color-mix(in srgb, var(--color-git), #333 90%);
   font-family: "Outfit", "Courier New", Courier, monospace;
   text-align: center;
 }
 
-h1 {
-  font-size: clamp(4rem, 10vw, 8rem);
-  color: white;
-  color: color-mix(in srgb, var(--git), white 40%);
-  font-weight: 800;
-}
-
-a {
-  color: yellow;
+a,
+a:hover {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-p {
-  color: white;
-  font-size: 2rem;
+img {
+  width: 100%;
+  display: block;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
-  padding: 40px;
+  padding: 20px;
   max-width: 1000px;
   margin: 0 auto;
-  flex-direction: column;
+}
+
+.container-md {
+  max-width: 800px;
 }

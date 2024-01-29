@@ -1,10 +1,10 @@
 import * as React from "react"
 
-const DOMAIN = "https://simplereactjs.com"
-const DEFAULT_IMAGE = "/react-course.png"
+const DOMAIN = "https://gitsimplified.com"
+const DEFAULT_IMAGE = "/git-course.png"
 
 function Seo({ children }) {
-  const imageCard = ``
+  const imageCard = `${DOMAIN}${DEFAULT_IMAGE}`
 
   const title = "Simplified Git Course"
 
