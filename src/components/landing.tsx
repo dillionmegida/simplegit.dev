@@ -27,7 +27,7 @@ const Header = styled.header`
       line-height: 1.2;
       top: 20px;
       position: relative;
-      font-size: clamp(1.4rem, 6vw, 8rem);
+      font-size: clamp(1.4rem, 6vw, 4rem);
       font-weight: 800;
     }
 
