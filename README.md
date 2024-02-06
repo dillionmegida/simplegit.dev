@@ -1,3 +1,3 @@
-# gitsimplified.com
+# simplegit.dev
 
-[More info](https://gitsimplified.com)
+[More info](https://simplegit.dev)
