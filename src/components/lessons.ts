@@ -20,13 +20,19 @@ export const lessons = [
     ],
   },
   {
-    label: "Upcoming Lessons",
+    label: "Git Fundamentals",
     lessons: [
       {
         title: "What is a Repository?",
-        youtube: null,
-        duration: "00:00",
+        youtube: "https://youtu.be/rM2_wK_wfF0",
+        duration: "06:46",
       },
+      
+    ],
+  },
+  {
+    label: "Upcoming Lessons",
+    lessons: [
       {
         title: "What are Branches?",
         youtube: null,
