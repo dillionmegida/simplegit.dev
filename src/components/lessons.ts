@@ -27,6 +27,26 @@ export const lessons = [
         youtube: "https://youtu.be/rM2_wK_wfF0",
         duration: "06:46",
       },
+      {
+        title: "Configuring git before usage",
+        youtube: "https://youtu.be/CD68SjqnWhg",
+        duration: "09:40",
+      },
+      {
+        title: "Tracked and Untracked files",
+        youtube: "https://youtu.be/N6q-wwkhRRk",
+        duration: "07:58",
+      },
+      {
+        title: "GIT ADD & Staged Changes",
+        youtube: "https://youtu.be/1j9in7LAZE4",
+        duration: "05:48",
+      },
+      {
+        title: "GIT COMMIT & Snapshots",
+        youtube: "https://youtu.be/W8-l9Y5MXN4",
+        duration: "08:12",
+      },
       
     ],
   },
