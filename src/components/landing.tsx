@@ -2,7 +2,7 @@ import React from "react"
 
 import styled from "styled-components"
 import { LINKS } from "../constants"
-import LessonsSection from "./lessons-section"
+import LessonsSection from "./lessons-section/lessons-section"
 
 const Header = styled.header`
   position: relative;
