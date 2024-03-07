@@ -56,6 +56,11 @@ const Header = styled.header`
       overflow: hidden;
       position: relative;
       top: 40px;
+
+      img {
+        background-color: #eee;
+        aspect-ratio: 16/9;
+      }
     }
   }
 `
@@ -81,21 +86,26 @@ const Content = styled.div`
     display: inline-block;
     margin: 40px 0;
     text-transform: uppercase;
-    transition: background-color 300ms;
-
-    &:hover {
-      background-color: var(--color-git-dark-3);
-    }
-
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    
     &::after {
       content: "";
-      position: absolute;
-      inset: 0;
-      background-color: var(--color-git-dark-2);
-      margin: auto 0;
-      height: 2px;
+      left: 0;
+      top: 0;
+      background-color: var(--color-git-dark-3);
       width: 100%;
+      height: 100%;
       z-index: -1;
+      position: absolute;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 300ms;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
     }
   }
 `

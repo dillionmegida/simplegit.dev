@@ -47,7 +47,16 @@ export const lessons = [
         youtube: "https://youtu.be/W8-l9Y5MXN4",
         duration: "08:12",
       },
-      
+      {
+        title: "Source Control in VS Code",
+        youtube: "https://youtu.be/ytDpd4ZizIU",
+        duration: "07:07",
+      },
+      {
+        title: "Hosting Repository on GitHub",
+        youtube: "https://youtu.be/uuyOZ9ALHQk",
+        duration: "11:36",
+      },
     ],
   },
   {
