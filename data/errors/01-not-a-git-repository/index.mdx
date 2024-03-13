@@ -1,0 +1,52 @@
+---
+title: "fatal: not a git repository"
+excerpt: "You're running a git command in a directory doesn't belong to git repository."
+date: 13-03-2024
+---
+
+Sometimes, you'd see the error as:
+
+```bash
+fatal: not a git repository (or any of the parent directories)
+```
+
+<HeadingBlock type="solution">Solution</HeadingBlock>
+
+The solution here is to verify that you're running the git command in a directory that belongs to a git repository. Either the `.git` directory exists in the current directory where you're running the command or it exists in the parent directory.
+
+It's even possible that you haven't yet created a repository. Maybe you forgot to run a `git init`? Or maybe you deleted the existing `.git` directory? Or maybe you have manually modified the `.git` directory? That could potentially "confuse" git or make the repository invalid.
+
+Look around--the `.git` directory is the piece of the puzzle for solving this error.
+
+<HeadingBlock>The problem</HeadingBlock>
+
+All Git's commands (well, most) run in the context of a repository:
+
+- `status` shows the state of a repository
+- `log` shows the commit history of a repository
+- `commit` captures a snapshot of changes in a project and saves the snapshot to a repository
+- and so on
+
+These commands have something to do with "a repository". So if there's no repository, and you run `git status`, then git is like "uhmmm, show you the state of what please?".
+
+`git log` will also result in "hello there, the commit history of what please?".
+
+A command like `git help` will run without a repository though, because that command is not related to "a repository".
+
+## How does git know what repository you're referring to?
+
+Every git repository lives in a [`.git` directory](). When you create a new repository (or clone a repository) for a project, you have the project on your device, and in that project, you have the `.git` directory. This is where git saves all the information necessary for you to navigate the repository. Things like the branches you have, commit history, remote connections and much more.
+
+Say you're in a directory like `/my/fancy/project/`. Then you run `git status` for example. How would git know what repository you're referring to?
+
+Firstly, git looks for `/my/fancy/project/.git/`, that is, the `.git` directory in the current directory you're on before running the command.
+
+If git doesn't see the `.git` directory here, then it would look for the directory in `/my/fancy/.git/`. That is, it tries to look for the closest `.git` directory which might be in the parent directory. If the parent directory has a git repository, that means the current directory (the child directory) is also part of that repository.
+
+If the parent directory does not have the `.git` directory in it, then git checks for `/my/.git/`. If there's nothing like that, git checks for `/.git/`.
+
+Still nothing? Then all hope lost. git concludes that the current directory is not part of a git repository. And since that context doesn't exist, git says:
+
+```bash
+fatal: not a git repository
+```

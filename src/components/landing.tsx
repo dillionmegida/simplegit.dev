@@ -7,6 +7,7 @@ import LessonsSection from "./lessons-section"
 const Header = styled.header`
   position: relative;
   padding-top: 40px;
+  text-align: center;
 
   .bg {
     border-radius: 50px;

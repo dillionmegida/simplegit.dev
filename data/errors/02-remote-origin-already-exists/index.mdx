@@ -1,0 +1,81 @@
+---
+title: "error: remote origin already exists."
+excerpt: "You're trying to add a new `origin` remote when you already have an existing `origin` remote."
+date: 13-03-2024
+---
+
+<HeadingBlock type="solution">Solutions</HeadingBlock>
+
+You can check the remote repositories you have saved with `git remote -v`. If the `origin` remote you're trying to add already exists, then you don't need to add it anymore.
+
+If the current `origin` remote isn't what you want and you would prefer a new one, then you can remove the existing one and add the new one with the following commands:
+
+```sh
+git remote remove origin
+git remote add origin [new-url]
+```
+
+Or instead of removing and adding, you can "update" with `set-url`:
+
+```sh
+git remote set-url origin [new-url]
+```
+
+<HeadingBlock>The Problem</HeadingBlock>
+
+In git, you cannot have two remotes with the same name. You can have multiple remotes with the same url, but you cannot have more than one remote with the same name.
+
+The `remote` command allows you to manage the remote repositories saved in your repository. For example, you can add a new remote repository like this:
+
+```sh
+git remote add [name] [url]
+```
+
+Here, you're adding a new remote repository with a "name" and the value as the "url". So you can add an "origin" repository like this:
+
+```sh
+git remote add origin https://...
+```
+
+Now when you do something like `git push origin main`, git knows that you're referring to "the main branch of the origin remote".
+
+And you can add more remote repositories:
+
+```sh
+git remote add javascript https://...
+```
+
+Now when you do `git fetch javascript`, git knows what git url to fetch from.
+
+You can have the same url for multiple remotes too:
+
+```sh
+git remote add javascript url-a
+git remote add python url-a
+```
+
+We have saved two remote repositories here with the labels `javascript` and `python` respectively, both having "url-a" as their urls.
+
+Saving a remote repository is basically a key-value data, where the key is the label and the value is a url. The important thing to note here is that the keys have to be unique. Imagine having two `javascript` keys, each with different "url" values. When you do:
+
+```sh
+git fetch javascript
+```
+
+You will be confusing git. Should git use the first url or the second url? That doesn't make sense. So if you already have a `javascript` remote repository saved, and then you do:
+
+```sh
+git remote add javascript another-url
+```
+
+Then git is like:
+
+```sh
+error: remote javascript already exists.
+```
+
+This is git saying, "uhmmm, you already have a remote repository with that name; maybe consider another name, or perhaps, you don't need to do what you're doing anymore".
+
+---
+
+This problem often happens when you do a `git clone url` and then follow it with a `git remote add origin url`. If you're creating a repository with `git init`, you would have to manually save your `origin` remote repository. But when you do a `git clone url`, git already sets the `origin` remote to point to the url. You don't need to do that anymore. Attempt to do that will result in the error we have addressed in this article.
