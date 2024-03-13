@@ -57,6 +57,11 @@ export const lessons = [
         youtube: "https://youtu.be/uuyOZ9ALHQk",
         duration: "11:36",
       },
+      {
+        title: "Cloning a Remote Repository",
+        youtube: "https://youtu.be/6OKk1J_orAM",
+        duration: "06:26",
+      },
     ],
   },
   {
